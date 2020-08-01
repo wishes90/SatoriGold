@@ -1,6 +1,7 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018-2019, The TurtleCoin Developers
+// Copyright (c) 2018-2019, The SatoriCoin Developers
 //
 // Please see the included LICENSE file for more information.
 
@@ -268,7 +269,7 @@ const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT     = 10;            //
 
 const char LATEST_VERSION_URL[] = "https://latest.satori.gold";
 
-    const std::string LICENSE_URL = "https://github.com/uwxpro/gold/blob/master/LICENSE";
+    const std::string LICENSE_URL = "https://github.com/satorigold/SatoriCoin/blob/master/LICENSE";
 
     const static boost::uuids::uuid CRYPTONOTE_NETWORK = {
         {0x25, 0xE8, 0xB1, 0x22, 0xC7, 0x42, 0x47, 0x41, 0x64, 0xA2, 0x91, 0xA4, 0xB6, 0xC1, 0x43, 0xF8}};
@@ -276,5 +277,7 @@ const char LATEST_VERSION_URL[] = "https://latest.satori.gold";
     const char *const SEED_NODES[] = {
         "45.77.41.5:17897", // Satori seed-node-1
         "45.32.106.171:17897", // Satori seed-node-2
+        "107.152.41.168:17897", // Satori seed-node-3
+        "107.152.41.169:17897", // Satori seed-node-4
     };
 } // CryptoNote
