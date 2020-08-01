@@ -275,8 +275,6 @@ const char LATEST_VERSION_URL[] = "https://latest.satori.gold";
         {0x25, 0xE8, 0xB1, 0x22, 0xC7, 0x42, 0x47, 0x41, 0x64, 0xA2, 0x91, 0xA4, 0xB6, 0xC1, 0x43, 0xF8}};
 
     const char *const SEED_NODES[] = {
-        "45.77.41.5:17897", // Satori seed-node-1
-        "45.32.106.171:17897", // Satori seed-node-2
         "107.152.41.168:17897", // Satori seed-node-3
         "107.152.41.169:17897", // Satori seed-node-4
     };
