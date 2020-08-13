@@ -14,7 +14,7 @@ namespace WalletConfig
     const std::string_view addressPrefix = "Xau";
 
     /* Your coins 'Ticker', e.g. Monero = XMR, Bitcoin = BTC */
-    const std::string ticker = "SCX";
+    const std::string ticker = "SAU";
 
     /* The filename to output the CSV to in save_csv */
     const std::string csvFilename = "transactions.csv";
@@ -37,7 +37,7 @@ namespace WalletConfig
     const std::string coinName = std::string(CryptoNote::CRYPTONOTE_NAME);
 
     /* Where can your users contact you for support? E.g. discord */
-    const std::string contactLink = "http://chat.satori.gold";
+    const std::string contactLink = "https://discord.gg/6jjhfCM";
 
 
     /* The number of decimals your coin has */
