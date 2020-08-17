@@ -1,7 +1,7 @@
 # daemon runs in the background
-# run something like tail /var/log/turtlecoind/current to see the status
+# run something like tail /var/log/satorid/current to see the status
 # be sure to run with volumes, ie:
-# docker run -v $(pwd)/turtlecoind:/var/lib/turtlecoind -v $(pwd)/wallet:/home/turtlecoin --rm -ti turtlecoin:latest
+# docker run -v $(pwd)/satorid:/var/lib/satorid -v $(pwd)/wallet:/home/turtlecoin --rm -ti turtlecoin:latest
 FROM ubuntu:16.04
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.2.2/s6-overlay-amd64.tar.gz /tmp/
@@ -30,11 +30,11 @@ RUN apt-get update && \
     cmake -DCMAKE_CXX_FLAGS="-g0 -Os -fPIC -std=gnu++11" .. && \
     make -j$(nproc) && \
     mkdir -p /usr/local/bin && \
-    cp src/TurtleCoind /usr/local/bin/TurtleCoind && \
+    cp src/Satorid /usr/local/bin/Satorid && \
     cp src/walletd /usr/local/bin/walletd && \
     cp src/zedwallet /usr/local/bin/zedwallet && \
     cp src/miner /usr/local/bin/miner && \
-    strip /usr/local/bin/TurtleCoind && \
+    strip /usr/local/bin/Satorid && \
     strip /usr/local/bin/walletd && \
     strip /usr/local/bin/zedwallet && \
     strip /usr/local/bin/miner && \
@@ -53,27 +53,27 @@ RUN apt-get update && \
       libboost-program-options1.58.0 \
       libicu55
 
-# setup the turtlecoind service
-RUN useradd -r -s /usr/sbin/nologin -m -d /var/lib/turtlecoind turtlecoind && \
+# setup the satorid service
+RUN useradd -r -s /usr/sbin/nologin -m -d /var/lib/satorid satorid && \
     useradd -s /bin/bash -m -d /home/turtlecoin turtlecoin && \
-    mkdir -p /etc/services.d/turtlecoind/log && \
-    mkdir -p /var/log/turtlecoind && \
-    echo "#!/usr/bin/execlineb" > /etc/services.d/turtlecoind/run && \
-    echo "fdmove -c 2 1" >> /etc/services.d/turtlecoind/run && \
-    echo "cd /var/lib/turtlecoind" >> /etc/services.d/turtlecoind/run && \
-    echo "export HOME /var/lib/turtlecoind" >> /etc/services.d/turtlecoind/run && \
-    echo "s6-setuidgid turtlecoind /usr/local/bin/TurtleCoind" >> /etc/services.d/turtlecoind/run && \
-    chmod +x /etc/services.d/turtlecoind/run && \
-    chown nobody:nogroup /var/log/turtlecoind && \
-    echo "#!/usr/bin/execlineb" > /etc/services.d/turtlecoind/log/run && \
-    echo "s6-setuidgid nobody" >> /etc/services.d/turtlecoind/log/run && \
-    echo "s6-log -bp -- n20 s1000000 /var/log/turtlecoind" >> /etc/services.d/turtlecoind/log/run && \
-    chmod +x /etc/services.d/turtlecoind/log/run && \
-    echo "/var/lib/turtlecoind true turtlecoind 0644 0755" > /etc/fix-attrs.d/turtlecoind-home && \
+    mkdir -p /etc/services.d/satorid/log && \
+    mkdir -p /var/log/satorid && \
+    echo "#!/usr/bin/execlineb" > /etc/services.d/satorid/run && \
+    echo "fdmove -c 2 1" >> /etc/services.d/satorid/run && \
+    echo "cd /var/lib/satorid" >> /etc/services.d/satorid/run && \
+    echo "export HOME /var/lib/satorid" >> /etc/services.d/satorid/run && \
+    echo "s6-setuidgid satorid /usr/local/bin/Satorid" >> /etc/services.d/satorid/run && \
+    chmod +x /etc/services.d/satorid/run && \
+    chown nobody:nogroup /var/log/satorid && \
+    echo "#!/usr/bin/execlineb" > /etc/services.d/satorid/log/run && \
+    echo "s6-setuidgid nobody" >> /etc/services.d/satorid/log/run && \
+    echo "s6-log -bp -- n20 s1000000 /var/log/satorid" >> /etc/services.d/satorid/log/run && \
+    chmod +x /etc/services.d/satorid/log/run && \
+    echo "/var/lib/satorid true satorid 0644 0755" > /etc/fix-attrs.d/satorid-home && \
     echo "/home/turtlecoin true turtlecoin 0644 0755" > /etc/fix-attrs.d/turtlecoin-home && \
-    echo "/var/log/turtlecoind true nobody 0644 0755" > /etc/fix-attrs.d/turtlecoind-logs
+    echo "/var/log/satorid true nobody 0644 0755" > /etc/fix-attrs.d/satorid-logs
 
-VOLUME ["/var/lib/turtlecoind", "/home/turtlecoin","/var/log/turtlecoind"]
+VOLUME ["/var/lib/satorid", "/home/turtlecoin","/var/log/satorid"]
 
 ENTRYPOINT ["/init"]
 CMD ["/usr/bin/execlineb", "-P", "-c", "emptyenv cd /home/turtlecoin export HOME /home/turtlecoin s6-setuidgid turtlecoin /bin/bash"]

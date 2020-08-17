@@ -71,7 +71,7 @@ const char     GENESIS_COINBASE_TX_HEX[]                     = "010201ff0001b4a8
 static_assert(sizeof(GENESIS_COINBASE_TX_HEX)/sizeof(*GENESIS_COINBASE_TX_HEX) != 1, "GENESIS_COINBASE_TX_HEX must not be empty.");
 
 /* This is the unix timestamp of the first "mined" block (technically block 2, not the genesis block)
-   You can get this value by doing "print_block 2" in TurtleCoind. It is used to know what timestamp
+   You can get this value by doing "print_block 2" in Satorid. It is used to know what timestamp
    to import from when the block height cannot be found in the node or the node is offline. */
 
 const uint64_t GENESIS_BLOCK_TIMESTAMP                       = 1595926604;
@@ -212,7 +212,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "SatoriCoin";
+const char     CRYPTONOTE_NAME[]                             = "SatoriGold";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;

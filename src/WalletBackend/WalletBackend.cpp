@@ -399,7 +399,7 @@ bool WalletBackend::tryUpgradeWalletFormat(
         System::Dispatcher localDispatcher;
         System::Dispatcher *dispatcher = &localDispatcher;
 
-        /* Our connection to turtlecoind */
+        /* Our connection to satorid */
         std::unique_ptr<CryptoNote::INode> node(
             new CryptoNote::NodeRpcProxy(daemonHost, daemonPort, 10, logManager)
         );
