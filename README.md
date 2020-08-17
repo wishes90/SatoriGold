@@ -8,7 +8,7 @@ The Virtual Gold Mining Coin | Zero Premine
 
 We will launch the coin on the 28 th July 2020 for a fair launch.
 
-We will maintain a 300sec block target times, the current mixin requirements, and etc. upon launch. Releases will be provided well ahead of the launch to help everyone who wishes to participate to do so.
+We will maintain a 300 sec block target times, the current mixin requirements, and etc. upon launch. Releases will be provided well ahead of the launch to help everyone who wishes to participate to do so.
 
 ### How To Compile
 
@@ -39,7 +39,7 @@ If you are using Clang, you will need Clang 6.0 or higher. You will also need li
 - `sudo pip install cmake`
 - `export CC=gcc-8`
 - `export CXX=g++-8`
-- `git clone -b master --single-branch https://github.com/turtlecoin/turtlecoin`
+- `git clone -b master --single-branch https://github.com/satorigold/SatoriGold`
 - `cd turtlecoin`
 - `mkdir build`
 - `cd build`
@@ -73,7 +73,7 @@ You need to modify the below command for your version of ubuntu - see https://ap
 - `sudo pip install cmake`
 - `export CC=clang-6.0`
 - `export CXX=clang++-6.0`
-- `git clone -b master --single-branch https://github.com/turtlecoin/turtlecoin`
+- `git clone -b master --single-branch https://github.com/satorigold/SatoriGold`
 - `cd turtlecoin`
 - `mkdir build`
 - `cd build`
@@ -92,8 +92,8 @@ Ensure you have the dependencies listed above.
 If you want to use clang, ensure you set the environment variables `CC` and `CXX`.
 See the ubuntu instructions for an example.
 
-- `git clone -b master --single-branch https://github.com/turtlecoin/turtlecoin`
-- `cd turtlecoin`
+- `git clone -b master --single-branch https://github.com/satorigold/SatoriGold`
+- `cd SatoriGold`
 - `mkdir build`
 - `cd build`
 - `cmake ..`
@@ -116,8 +116,8 @@ The binaries will be in the `src` folder when you are complete.
 - `brew install --force cmake boost llvm openssl`
 - `export CC=/usr/local/opt/llvm/bin/clang`
 - `export CXX=/usr/local/opt/llvm/bin/clang++`
-- `git clone -b master --single-branch https://github.com/turtlecoin/turtlecoin`
-- `cd turtlecoin`
+- `git clone -b master --single-branch https://github.com/satorigold/SatoriGold`
+- `cd SatoriGold`
 - `mkdir build`
 - `cd build`
 - `cmake ..`
@@ -152,7 +152,7 @@ For 64-bit:
 - `cd build`
 - `set PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin";%PATH%`
 - `cmake -G "Visual Studio 15 2017 Win64" .. -DBOOST_ROOT=C:/local/boost_1_68_0`
-- `MSBuild TurtleCoin.sln /p:Configuration=Release /m`
+- `MSBuild SatoriCoin.sln /p:Configuration=Release /m`
 
 For 32-bit:
 - From the start menu, open 'x86 Native Tools Command Prompt for vs2017'.
@@ -161,7 +161,7 @@ For 32-bit:
 - `cd build`
 - `set PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin";%PATH%`
 - `cmake -G "Visual Studio 15 2017" .. -DBOOST_ROOT=C:/local/boost_1_68_0`
-- `MSBuild TurtleCoin.sln /p:Configuration=Release /p:Platform=Win32 /m`
+- `MSBuild SatoriCoin.sln /p:Configuration=Release /p:Platform=Win32 /m`
 
 The binaries will be in the `src/Release` folder when you are complete.
 
@@ -170,7 +170,7 @@ The binaries will be in the `src/Release` folder when you are complete.
 - `Satorid.exe --version`
 
 #### Thanks
-Cryptonote Developers, Bytecoin Developers, Monero Developers, Forknote Project, TurtleCoin Community
+Cryptonote Developers, Bytecoin Developers, Monero Developers, Forknote Project, satorigold Community
 
 ### Copypasta for license when editing files
 
@@ -180,7 +180,7 @@ Hi TurtleCoin contributor, thanks for forking and sending back Pull Requests. Ex
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018-2019, The TurtleCoin Developers
-// Copyright (c) 2019, The TurtleCoinCash Developers
+// Copyright (c) 2019, The satorigold Developers
 //
 // Please see the included LICENSE file for more information.
 ```
