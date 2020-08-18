@@ -152,7 +152,7 @@ For 64-bit:
 - `cd build`
 - `set PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin";%PATH%`
 - `cmake -G "Visual Studio 15 2017 Win64" .. -DBOOST_ROOT=C:/local/boost_1_68_0`
-- `MSBuild SatoriCoin.sln /p:Configuration=Release /p:Platform /m`
+- `MSBuild SatoriCoin.sln /p:Configuration=Release /p:Platform=x64 /m`
 
 For 32-bit:
 - From the start menu, open 'x86 Native Tools Command Prompt for vs2017'.
