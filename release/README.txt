@@ -1,1 +1,0 @@
-First start the daemon "Satorid" and keep it running, THEN start the wallet "satwallet".
